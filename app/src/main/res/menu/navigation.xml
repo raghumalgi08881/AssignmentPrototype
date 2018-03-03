@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_activities"
+        android:icon="@drawable/activites"
+        app:showAsAction="always"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_eatout"
+        android:icon="@drawable/eatout"
+        app:showAsAction="always"
+        android:title="@string/title_dashboard" />
+
+    <item
+        android:id="@+id/navigation_events"
+        android:icon="@drawable/event"
+        app:showAsAction="always"
+        android:title="@string/title_notifications" />
+    <item
+        android:id="@+id/navigation_you"
+        android:icon="@drawable/you"
+        app:showAsAction="always"
+        android:title="@string/title_you" />
+
+</menu>

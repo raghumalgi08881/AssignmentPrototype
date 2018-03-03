@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CleartripHome</string>
+    <string name="title_home">Activities</string>
+    <string name="title_dashboard">Eat Out</string>
+    <string name="title_notifications">Events</string>
+    <string name="title_you">You</string>
+    <string name="editor_text">Editor\'s Choice</string>
+    <string name="all_categories">All Categories</string>
+</resources>
