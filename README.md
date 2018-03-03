@@ -17,7 +17,7 @@ I have used following components for the application
 5.Other UI components such as recyclerview,appcompat,v4 and v7 support libraries
 
 
-Architecture Of RoomBooking Application
+Architecture Of CleartripAssignment Application
 
 This application follows MVP architecture i.e Model View Presenter.
 There are three main modules that are present in the application
