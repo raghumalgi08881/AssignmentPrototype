@@ -1,20 +1,13 @@
 # Cleartrip Assignment
 
-1. Implemented Dagger for dependency injection which promotes loose coupling(Lesser dependencies between components)
-
-Improvements to be made to the app in the next version:
-1.Use RxJava
-2.To Start converting the code to kotlin to leverage several advantages of kotlin
-
-
-
 I have used following components for the application
 
-1.Retrofit for accessing webservice(A http library)
-2.Used Dagger 2.0 for dependency injection
-3.Picasso for dynamic Image loading and caching images
-4.Gson for json parsing
-5.Other UI components such as recyclerview,appcompat,v4 and v7 support libraries
+1.Implemented Dagger for dependency injection which promotes loose coupling(Lesser dependencies between components)
+2.Retrofit for accessing webservice(A http library)
+3.Used Dagger 2.0 for dependency injection
+4.Picasso for dynamic Image loading and caching images
+5.Gson for json parsing
+6.Other UI components such as recyclerview,appcompat,v4 and v7 support libraries
 
 
 Architecture Of CleartripAssignment Application
@@ -44,3 +37,8 @@ The CleartripWebserviceInteractor repository module can also  be extended to acc
 Other Supporting Modules or Packages:
 api module : For Supporting Retrofit Module
 model: contains all the POJO objects used in the application
+
+
+**Improvements to be made to the app in the next version:**
+1.Use RxJava
+2.To Start converting the code to kotlin to leverage several advantages of kotlin
