@@ -51,8 +51,8 @@ public class CarouselPagerAdapter extends PagerAdapter {
         TextView subtitle = (TextView) myImageLayout
                 .findViewById(R.id.subtitle);
         title.setText(carousels.get(position).title);
-        subtitle.setText(carousels.get(position).sub_title);
-        tag.setText(carousels.get(position).tag_text);
+        subtitle.setText(carousels.get(position).subTitle);
+        tag.setText(carousels.get(position).tagText);
         String image = NetworkModule.IMAGE_BASE_URL+ carousels.get(position).images.get(0).img.replace("{type}","w");
         Log.d("Clearrtrip","rl is "+image);
 

@@ -22,7 +22,7 @@
         android:layout_centerInParent="true"
         android:text="Title"
         android:gravity="center"
-        android:textSize="16sp"
+        android:textSize="@dimen/textsize_16"
         android:textColor="@android:color/white"
         android:textStyle="bold" />
 

@@ -1,13 +1,12 @@
 package com.assignment.travel.ui.home.pager;
 
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.assignment.travel.model.Categories;
 import com.assignment.travel.model.Collections;
-import com.assignment.travel.ui.home.CollectionsFragment;
+import com.assignment.travel.ui.home.CategoryListFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +31,7 @@ public class CategoriesPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        CollectionsFragment fragment = CollectionsFragment.newInstance(position + 1);
+        CategoryListFragment fragment = CategoryListFragment.newInstance(position + 1);
 
         if(categories.get(position).id.equals("0")){
             fragment.setCollections(collections);

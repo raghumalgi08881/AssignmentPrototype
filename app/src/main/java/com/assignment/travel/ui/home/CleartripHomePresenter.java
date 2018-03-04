@@ -45,7 +45,7 @@ public class CleartripHomePresenter implements CleartripHomeContract.UserActions
 
 
     @Override
-    public List<Carousel> filterCarousel(List<Carousel> carousels,List<Integer> ids){
+    public List<Carousel> filterCarousels(List<Carousel> carousels, List<Integer> ids){
         List<Carousel> carouselList = new ArrayList<>();
         for (Carousel carousel :carousels){
             if(ids.contains(carousel.id)){

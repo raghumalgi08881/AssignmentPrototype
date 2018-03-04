@@ -10,23 +10,23 @@ import android.view.ViewGroup;
 
 import com.assignment.travel.R;
 import com.assignment.travel.model.Collections;
-import com.assignment.travel.ui.home.adapter.CollectionsRecyclerAdapter;
+import com.assignment.travel.ui.home.adapter.CategoriesRecyclerAdapter;
 import com.assignment.travel.ui.home.adapter.ItemOffsetDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CollectionsFragment extends Fragment {
+public class CategoryListFragment extends Fragment {
     public static final String ARG_PAGE = "ARG_PAGE";
 
     private List<Collections> collections = new ArrayList<>();
     private View view;
 
 
-    public static CollectionsFragment newInstance(int page) {
+    public static CategoryListFragment newInstance(int page) {
         Bundle args = new Bundle();
         args.putInt(ARG_PAGE, page);
-        CollectionsFragment fragment = new CollectionsFragment();
+        CategoryListFragment fragment = new CategoryListFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -45,12 +45,12 @@ public class CollectionsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
          view = inflater.inflate(R.layout.fragment_category_list, container, false);
-          initAndLoadRecyclerView();
+          initAndLoadCategoryList();
 
         return view;
     }
 
-    public void initAndLoadRecyclerView(){
+    public void initAndLoadCategoryList(){
         GridLayoutManager manager = new GridLayoutManager(getActivity(), 2);
         manager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
@@ -63,6 +63,6 @@ public class CollectionsFragment extends Fragment {
         recycler.setLayoutManager(manager);
         ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(getActivity(), R.dimen.spacing);
         recycler.addItemDecoration(itemDecoration);
-        recycler.setAdapter(new CollectionsRecyclerAdapter(getActivity(),collections));
+        recycler.setAdapter(new CategoriesRecyclerAdapter(getActivity(),collections));
     }
 }

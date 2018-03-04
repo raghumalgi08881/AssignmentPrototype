@@ -6,4 +6,7 @@
     <string name="title_you">You</string>
     <string name="editor_text">Editor\'s Choice</string>
     <string name="all_categories">All Categories</string>
+    <string name="failure_message">Unable to fetch activities.It might be a problem with Network</string>
+    <string name="deals">deals</string>
+
 </resources>

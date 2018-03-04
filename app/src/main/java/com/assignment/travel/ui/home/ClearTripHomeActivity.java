@@ -3,12 +3,16 @@ package com.assignment.travel.ui.home;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.assignment.travel.ClearTripAssigmentApplication;
@@ -33,6 +37,8 @@ public class ClearTripHomeActivity extends AppCompatActivity implements Cleartri
 
     @Inject
      CleartripHomeContract.UserActionsListener presenter;
+    private CoordinatorLayout coordinatorLayout;
+    private ProgressBar progressBar;
     @Inject
     Categories category;
     private TextView cityName;
@@ -62,6 +68,10 @@ public class ClearTripHomeActivity extends AppCompatActivity implements Cleartri
         setContentView(R.layout.activities_layout);
         ((ClearTripAssigmentApplication)getApplication()).getAppComponent().inject(this);
         cityName = findViewById(R.id.city);
+        coordinatorLayout = (CoordinatorLayout) findViewById(R.id
+                .coordinatorLayout);
+        progressBar = (ProgressBar)findViewById(R.id.progressBar);
+
         presenter.setView(this);
         presenter.getApiResponse();
     }
@@ -69,7 +79,7 @@ public class ClearTripHomeActivity extends AppCompatActivity implements Cleartri
 
 
     private void initAndLoadCarouselPager(@NonNull ApiResponse response) {
-        List<Carousel> carousels =  presenter.filterCarousel(response.editorial.carousel,response.editorial.ttd.cp);
+        List<Carousel> carousels =  presenter.filterCarousels(response.editorial.carousel,response.editorial.ttd.cp);
         ViewPager pager = findViewById(R.id.pager);
         pager.setClipToPadding(false);
         pager.setPageMargin(12);
@@ -110,7 +120,11 @@ public class ClearTripHomeActivity extends AppCompatActivity implements Cleartri
 
     @Override
     public void setProgressIndicator(boolean active) {
-
+        if(active){
+            progressBar.setVisibility(View.VISIBLE);
+        }else{
+            progressBar.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -119,11 +133,17 @@ public class ClearTripHomeActivity extends AppCompatActivity implements Cleartri
        initAndLoadEditorialChoice(response);
        initAndLoadCategoryList(response);
        cityName.setText(response.city.name);
+        findViewById(R.id.editorialTv).setVisibility(View.VISIBLE);
+        findViewById(R.id.navigation).setVisibility(View.VISIBLE);
+        findViewById(R.id.deals).setVisibility(View.VISIBLE);
     }
 
     @Override
     public void failedToFetchResponse() {
+        Snackbar snackbar = Snackbar
+                .make(coordinatorLayout, getString(R.string.failure_message), Snackbar.LENGTH_LONG);
 
+        snackbar.show();
     }
 
 

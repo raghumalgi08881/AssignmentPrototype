@@ -16,12 +16,12 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 
-public class CollectionsRecyclerAdapter extends RecyclerView.Adapter<CollectionsRecyclerAdapter.CollectionsListViewHolder> {
+public class CategoriesRecyclerAdapter extends RecyclerView.Adapter<CategoriesRecyclerAdapter.CollectionsListViewHolder> {
 
     private List<Collections> itemList;
     private Context context;
 
-    public CollectionsRecyclerAdapter(Context context, List<Collections> itemList) {
+    public CategoriesRecyclerAdapter(Context context, List<Collections> itemList) {
         this.itemList = itemList;
         this.context = context;
 
@@ -39,7 +39,7 @@ public class CollectionsRecyclerAdapter extends RecyclerView.Adapter<Collections
     public void onBindViewHolder(CollectionsListViewHolder holder, int position) {
         Collections item = getItem(position);
         holder.title.setText(item.collection_name);
-        holder.subtitle.setText(item.count_text);
+        holder.subtitle.setText(item.countText);
         String image = NetworkModule.IMAGE_BASE_URL+ item.image.replace("{type}","w");
 
         Picasso.with(context).load(image).into(holder.image);

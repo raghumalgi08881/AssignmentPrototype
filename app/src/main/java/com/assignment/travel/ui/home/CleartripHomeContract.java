@@ -20,7 +20,7 @@ public interface CleartripHomeContract {
     interface UserActionsListener {
         void  getApiResponse();
         void  setView(CleartripHomeContract.View view);
-        List<Carousel> filterCarousel(List<Carousel> carousels, List<Integer> ids);
+        List<Carousel> filterCarousels(List<Carousel> carousels, List<Integer> ids);
 
 
     }

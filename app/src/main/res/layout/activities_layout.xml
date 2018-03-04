@@ -2,7 +2,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/coordinatorLayout"
     android:fitsSystemWindows="true">
+
+
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/htab_appbar"
@@ -18,13 +21,14 @@
             android:fitsSystemWindows="true"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/lightgray"
                 android:paddingBottom="?android:attr/actionBarSize"
                 app:layout_collapseMode="none">
+
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -44,8 +48,13 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
                             android:layout_centerVertical="true"
-                            android:layout_marginLeft="@dimen/margin_5"
-                            android:text="DEALS"
+                            android:layout_marginLeft="@dimen/margin_8"
+                            android:text="@string/deals"
+                            android:id="@+id/deals"
+                            android:visibility="gone"
+                            android:textAllCaps="true"
+                            android:inputType="textCapCharacters"
+                            android:textSize="@dimen/textsize_16"
                             android:textColor="@android:color/white"
 
                             />
@@ -55,6 +64,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
+                            android:textSize="@dimen/textsize_16"
                             android:textColor="@android:color/white"
 
                             />
@@ -93,7 +103,8 @@
                             android:layout_marginTop="@dimen/margin_20"
                             android:text="@string/editor_text"
                             android:textAllCaps="true"
-
+                            android:id="@+id/editorialTv"
+                            android:visibility="gone"
                             android:textColor="@android:color/black" />
 
                         <android.support.v7.widget.RecyclerView
@@ -106,6 +117,7 @@
                             android:orientation="horizontal" />
                     </LinearLayout>
                 </LinearLayout>
+
             </FrameLayout>
 
             <android.support.v7.widget.Toolbar
@@ -138,6 +150,14 @@
         android:background="@android:color/white"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content" />
+
     -
 
     <android.support.design.widget.BottomNavigationView
@@ -150,6 +170,7 @@
         android:background="?android:attr/windowBackground"
         app:itemBackground="@color/darkBlue"
         app:itemIconTint="@android:color/white"
+        android:visibility="gone"
         app:itemTextColor="@android:color/white"
         app:menu="@menu/navigation" />
 
