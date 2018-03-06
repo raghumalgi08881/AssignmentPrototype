@@ -51,6 +51,9 @@ public class CategoryListFragment extends Fragment {
     }
 
     public void initAndLoadCategoryList(){
+
+
+
         GridLayoutManager manager = new GridLayoutManager(getActivity(), 2);
         manager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override

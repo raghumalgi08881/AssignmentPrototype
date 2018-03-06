@@ -53,7 +53,6 @@
                             android:id="@+id/deals"
                             android:visibility="gone"
                             android:textAllCaps="true"
-                            android:inputType="textCapCharacters"
                             android:textSize="@dimen/textsize_16"
                             android:textColor="@android:color/white"
 
@@ -133,6 +132,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="?android:attr/actionBarSize"
                 android:layout_gravity="bottom"
+                app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+
                 android:background="@android:color/white"
                 app:layout_scrollFlags="enterAlways"
                 app:tabMode="scrollable" />

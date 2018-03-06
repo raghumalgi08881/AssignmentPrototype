@@ -132,7 +132,8 @@ public class ClearTripHomeActivity extends AppCompatActivity implements Cleartri
        initAndLoadCarouselPager(response);
        initAndLoadEditorialChoice(response);
        initAndLoadCategoryList(response);
-       cityName.setText(response.city.name);
+        String city = response.city.name.substring(0,1).toUpperCase() + response.city.name.substring(1);
+        cityName.setText(city);
         findViewById(R.id.editorialTv).setVisibility(View.VISIBLE);
         findViewById(R.id.navigation).setVisibility(View.VISIBLE);
         findViewById(R.id.deals).setVisibility(View.VISIBLE);
